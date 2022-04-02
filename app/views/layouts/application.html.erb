@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shmot</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'reset', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag Ckeditor.cdn_url %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $(".like_hover").click(function(){
+        $(this).toggleClass("like_click");
+      });
+      $(".finger_hover").click(function(){
+        $(this).toggleClass("finger_click");
+      });
+      $(".favorites_hover").click(function(){
+        $(this).toggleClass("favorites_click");
+      });
+      $(".section5_img1").hover(function(){
+        $(this).AddClass("img_red");
+      });
+    });
+    </script>
+  </head>
+
+  <body>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% elsif alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    <div class="frame">
+      <div class="section1">
+        <div id="grid_section1" class="">
+          <a href="https://acsel323.github.io/shmot/menu">
+          <div class="section1_p1">Навигация</div></a>
+          <div class="section1_p2">Поясним за шмот</div>
+          <div class="section1_p3">Аккаунт</div>
+        </div>
+      </div>
+      <div class="section2">
+        <div class="section2_line1"></div>
+        <div class="logo"></div>
+        <div class="section2_p1">Медиасервис для поиска селективных секондов, свопов и маркетов</div>
+        <div class="section2_line2"></div>
+      </div>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>
